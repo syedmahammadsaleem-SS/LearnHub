@@ -1,30 +1,44 @@
-# LearnHub – Learning Management System
+# ShopOnline
 
-LearnHub is a simple online learning platform built using HTML, CSS, and JavaScript. It helps users explore courses, watch video lessons, read notes, and track their learning progress.
+A simple, responsive e-commerce website built with HTML, CSS and JavaScript. No frameworks or installation needed.
+
+**Live demo:** https://shoponlineindia.netlify.app/
 
 ## Features
 
-- Browse and search courses
-- Filter courses by category
-- Watch YouTube video lessons
-- Read learning notes
-- Download PDF materials
-- Track completed lessons
-- Bookmark lessons
-- Dark and light mode
-- Responsive design
+- Browse 30 products in 5 categories
+- Search, filter (category, price, rating) and sort
+- Cart with quantity controls and promo codes (`ONLINE20`, `SAVE10`)
+- Wishlist
+- Demo login and checkout
+- Dark mode
+- Works on mobile and desktop
+- Saves your cart and wishlist in the browser
 
-## Technologies Used
+## Tech Used
 
-- HTML5 – Website structure
-- CSS3 – Website design
-- JavaScript – Website functionality
+HTML5, CSS3, JavaScript (ES6), Font Awesome, Google Fonts
+
+## Project Structure
+
+```
+shoponline/
+├── index.html
+├── css/styles.css
+├── js/app.js
+└── README.md
+```
 
 ## How to Run
 
-1. Download or clone this repository.
-2. Open the project in VS Code.
-3. Open `index.html` using Live Server.
+1. Download or clone this repository
+2. Open `index.html` in your browser
+
+An internet connection is needed for fonts, icons and product images.
+
+## Note
+
+This is a front-end demo. Login and payment are simulated, and no real data is sent anywhere.
 
 ## Developer
 
