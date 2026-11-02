@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b14">
+  <meta name="description" content="LearnHub — a focused learning space for video lessons, detailed notes and downloadable resources.">
+  <title>LearnHub — Your learning space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/courses-data.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" id="homeLink" aria-label="LearnHub home"><span class="brand-icon">L</span><span>Learn<span class="brand-accent">Hub</span></span></a>
+    <nav class="top-nav"><a href="#library" id="navExplore">Explore library</a><a href="#about" id="navAbout">About</a></nav>
+    <div class="top-actions"><span class="top-status"><i></i> YOUR LEARNING SPACE</span><button class="round-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">☼</button><button class="round-btn menu-toggle" id="mobileMenuBtn" aria-label="Open course menu">☰</button></div>
+  </header>
+
+  <main>
+    <section class="view library-view" id="libraryView">
+      <section class="hero">
+        <div class="hero-content">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> LEARN AT YOUR OWN PACE</div>
+          <h1>Make your next<br><span>skill your superpower.</span></h1>
+          <p class="hero-description">A calmer, smarter place to learn. Follow structured courses, watch lessons, explore detailed notes and keep your progress moving.</p>
+          <div class="hero-actions"><a class="primary-btn" href="#library">Explore courses <span>↗</span></a><div class="hero-proof"><div class="proof-avatars"><b>S</b><b>L</b><b>+</b></div><span>Learn something new today</span></div></div>
+          <div class="hero-stats"><div><strong id="heroCourseCount">0</strong><span>Courses</span></div><div><strong id="heroLessonCount">0</strong><span>Video lessons</span></div><div><strong>100%</strong><span>Self paced</span></div></div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="visual-glow"></div><div class="visual-ring ring-a"></div><div class="visual-ring ring-b"></div>
+          <div class="learning-card"><div class="learning-card-top"><span class="mini-icon">✦</span><span class="live-pill">LEARNING PATH</span></div><div class="visual-title">Your growth<br>starts here.</div><div class="visual-line"></div><div class="visual-foot"><span>ONE LESSON AT A TIME</span><b>↗</b></div></div>
+          <div class="floating-chip chip-video"><span>▶</span> Video lessons</div><div class="floating-chip chip-notes"><span>▤</span> Smart study notes</div><div class="floating-chip chip-progress"><span>✦</span> Keep progressing</div>
+        </div>
+      </section>
+
+      <section class="library-section" id="library">
+        <div class="section-top"><div><div class="eyebrow muted-eyebrow">THE LEARNING LIBRARY</div><h2>Explore courses<span class="heading-period">.</span></h2><p>Find a course, open a lesson and start building real skills.</p></div><div class="library-total"><strong id="courseCount">0</strong><span>available courses</span></div></div>
+        <div class="library-tools"><label class="search-box"><span>⌕</span><input type="search" id="searchInput" placeholder="Search courses, topics or skills..." autocomplete="off"><kbd>/</kbd></label><div class="filter-group" id="categoryFilters" aria-label="Filter by category"></div><select id="sortSelect" class="sort-select" aria-label="Sort courses"><option value="featured">Featured first</option><option value="az">Name: A to Z</option><option value="lessons">Most lessons</option></select></div>
+        <div class="course-grid" id="courseGrid"></div>
+        <div class="empty-state hidden" id="emptyState"><div>⌕</div><h3>No courses found</h3><p>Try a different search or category.</p><button class="text-btn" id="clearFilters">Clear filters</button></div>
+      </section>
+      <section class="bottom-cta" id="about"><div><span class="eyebrow">YOUR JOURNEY, YOUR PACE</span><h2>Small steps. Real progress.</h2><p>Learn consistently, revisit your notes and keep moving forward.</p></div><div class="cta-symbol">✳</div></section>
+    </section>
+
+    <section class="view learning-view hidden" id="learningView">
+      <aside class="course-sidebar" id="courseSidebar">
+        <div class="sidebar-top"><button class="back-link" id="backLibrary">← Back to library</button><div class="sidebar-course"><span class="sidebar-label">NOW LEARNING</span><h2 id="sidebarCourseTitle"></h2><div class="progress-meta"><span id="progressText">0% complete</span><span id="progressCount">0/0</span></div><div class="progress-track"><i id="courseProgressBar"></i></div></div></div>
+        <div class="sidebar-tools"><span>COURSE CONTENTS</span><button id="collapseAllBtn">Collapse all</button></div>
+        <nav id="lessonNavigation" class="lesson-navigation"></nav>
+        <div class="sidebar-bottom"><span class="sidebar-small-icon">✦</span><div><b>Keep going!</b><small>Every lesson moves you forward.</small></div></div>
+      </aside>
+      <div class="sidebar-scrim" id="sidebarScrim"></div>
+      <section class="lesson-area">
+        <div class="lesson-toolbar"><button class="mobile-contents" id="mobileContents">☰ Contents</button><div class="breadcrumbs"><button id="crumbLibrary">Library</button><span>/</span><span id="breadcrumbCourse"></span></div><div class="toolbar-right"><button class="round-btn" id="bookmarkBtn" title="Bookmark lesson" aria-label="Bookmark lesson">☆</button><button class="round-btn" id="focusBtn" title="Focus mode" aria-label="Toggle focus mode">⛶</button></div></div>
+        <div class="lesson-inner">
+          <div class="lesson-heading"><div class="lesson-kicker" id="lessonKicker"></div><div class="lesson-title-row"><h1 id="lessonTitle"></h1><span class="lesson-complete-badge hidden" id="completedBadge">✓ Completed</span></div><p id="lessonDescription"></p></div>
+          <div id="materialList" class="material-list"></div>
+          <div class="lesson-actions"><label class="complete-check"><input type="checkbox" id="completeCheckbox"><span class="fake-check">✓</span><span>Mark this lesson as complete</span></label><div class="lesson-pager"><button class="pager-btn" id="prevLesson">← Previous</button><span id="lessonPosition"></span><button class="pager-btn pager-next" id="nextLesson">Next lesson <span>→</span></button></div></div>
+          <div class="next-up" id="nextUp"><div><small>UP NEXT</small><strong id="nextUpTitle"></strong></div><button class="next-up-btn" id="nextUpBtn">Continue →</button></div>
+        </div>
+      </section>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="#" id="footerHome"><span class="brand-icon">L</span><span>Learn<span class="brand-accent">Hub</span></span></a><span>Learn with curiosity. Grow with consistency.</span><span>© <b id="year"></b> LearnHub</span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
